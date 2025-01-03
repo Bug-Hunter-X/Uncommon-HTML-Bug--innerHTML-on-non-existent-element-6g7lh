@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+  <script>
+    // Correctly using innerHTML after ensuring element exists
+    window.addEventListener('load', function(){
+      document.getElementById('myDiv').innerHTML = "<p>This is a paragraph.</p>";
+      let newDiv = document.createElement('newDiv');
+      newDiv.innerHTML = "<p>This paragraph should show up</p>";
+      document.body.appendChild(newDiv);
+    });
+  </script>
+</body>
+</html>
